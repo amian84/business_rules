@@ -1,0 +1,15 @@
+{
+    "name": "ami_business_rules",
+    "version": "1.0.2",
+    "main": "main.ts",
+    "author": "David Amian Valle <amiansito84@gmail.com>",
+    "license": "GPLv3",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/amian84/business_rules.git"
+    },
+    "keywords": [
+        "business",
+        "rules"
+    ]
+}
