@@ -1,9 +1,15 @@
 {
     "name": "ami_business_rules",
-    "version": "1.0.2",
-    "main": "main.ts",
+    "version": "1.0.4",
+    "main": "dist/main.js",
+    "types": "dist/main.d.ts",
     "author": "David Amian Valle <amiansito84@gmail.com>",
     "license": "GPLv3",
+    "scripts": {
+        "compile": "rm -rf /dist && npm run copyfiles && tsc --declaration",
+        "copyfiles": "copyfiles  \"src/**/*.ejs\" \"src/**/*.json\" \"src/**/*.js\" \"src/**/*.d.ts\" dist -u 1",
+        "start-test": "npm run compile && node dist/test_rules/index.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/amian84/business_rules.git"
@@ -11,5 +17,12 @@
     "keywords": [
         "business",
         "rules"
-    ]
+    ],
+    "dependencies": {
+        "copyfiles": "^2.1.0",
+        "typescript": "*"
+    },
+    "devDependencies": {
+        "@types/node": "*"
+    }
 }
