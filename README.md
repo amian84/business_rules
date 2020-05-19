@@ -3,8 +3,35 @@ Simple interface to create custom business rules that you can process on your co
 
 # Example
 ```js
+
+import { Rule } from "../main";
 import { RulesManager } from "ami_business_rules";
 
+export class TestRule implements Rule {
+    public status: boolean;
+    public code: string;
+    public msg: string;
+    private data: boolean;
+    constructor(code: string, data: boolean) {
+        this.code = code;
+        this.data = data;
+        this.status = true;
+    }
+    public process(): boolean {
+        console.log("Processing " + this.code);
+        if (!this.data){
+            this.msg = "Fails rule";
+            this.status = false;
+        } else {
+           this.msg = "Pass rule";
+        }
+        return this.status;
+    }
+
+
+}
+
+var ruleObject = new TestRule();
 var rm = RulesManager.get();
 
 rm.addRule(ruleObject, "Rule Group Name");
