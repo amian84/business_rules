@@ -34,14 +34,21 @@ export class TestRule implements Rule {
 var ruleObject = new TestRule();
 var rm = RulesManager.get();
 
-rm.addRule(ruleObject, "Rule Group Name");
+rm.addRule(ruleObject, "RuleGroupName");
 
-var result = rm.process("Rule Group Name");
+var result = rm.process("RuleGroupName");
 
 if (!result){
     console.log("FAILS");
 } else {
     console.log("PASS");
+}
+
+for(var rule of rm.getAllRules("RuleGroupName")){
+    console.log("******");
+    console.log("Rule Name: " + rule.code);
+    console.log("Rule status: " + rule.status.toString());
+    console.log("Rule msg: " + rule.msg);
 }
 
 ```
