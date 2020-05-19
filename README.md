@@ -52,4 +52,6 @@ You can run the test
 npm run start-test
 ```
 
+## Contributing
 
+Refer to [CONTRIBUTING.md](https://gitlab.xmltravelgate.com/amian84/business_rules/blob/master/CONTRIBUTING.md)
